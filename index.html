@@ -27,6 +27,10 @@
 
 <body>
 
+  <button id="toggle-view-btn" style="position: fixed; top: 10px; right: 10px; z-index: 9999; padding: 10px 20px; background: #333; color: #fff; border: 2px solid #fff; cursor: pointer; font-family: 'Poppins', sans-serif; border-radius: 5px;">Switch to Resume</button>
+
+  <div id="classic-site" style="display: none;">
+
   <!--
     - #MAIN
   -->
@@ -965,6 +969,36 @@ the help of RDP) to build Apps.
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  </div>
+
+  <script src="https://unpkg.com/kaboom@3000.1.17/dist/kaboom.js"></script>
+  <script src="./assets/js/game.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('toggle-view-btn');
+    const classicSite = document.getElementById('classic-site');
+    const canvas = document.querySelector('canvas');
+    let isGameView = true;
+
+    toggleBtn.addEventListener('click', () => {
+      isGameView = !isGameView;
+      if (isGameView) {
+        classicSite.style.display = 'none';
+        if (canvas) canvas.style.display = 'block';
+        toggleBtn.innerText = 'Switch to Resume';
+        if (window.gameInstance) {
+           window.gameInstance.debug.paused = false;
+        }
+      } else {
+        classicSite.style.display = 'block';
+        if (canvas) canvas.style.display = 'none';
+        toggleBtn.innerText = 'Switch to Game';
+        // Pause game if possible
+        if (window.gameInstance) {
+           window.gameInstance.debug.paused = true;
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
