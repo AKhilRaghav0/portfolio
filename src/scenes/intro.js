@@ -12,7 +12,7 @@ export function initIntroScene() {
         const titleText = add([
             text("AKHIL RAGHAV", {
                 size: 64,
-                font: "Rye", // This matches the Google Font loaded in index.html
+                // font: "Rye", // REMOVED: Using default font to prevent crashes
                 width: width() - 100,
                 align: "center"
             }),
@@ -38,7 +38,7 @@ export function initIntroScene() {
         const startText = add([
             text("PRESS SPACE TO START", {
                 size: 32,
-                font: "Rye",
+                // font: "Rye", // REMOVED: Using default font
             }),
             pos(center().x, center().y + 100),
             anchor("center"),

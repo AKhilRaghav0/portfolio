@@ -9,7 +9,7 @@ const k = kaboom({
     scale: 1,
     debug: true, // Allow debug mode (F1)
     background: [0, 0, 0], // Black background for cinematic feel
-    font: "Rye", // Default cinematic font if loaded, otherwise fallback
+    // font: "Rye", // REMOVED: Using default font to prevent crashes if asset not loaded
 });
 
 // Expose game instance globally for debugging or external control if needed

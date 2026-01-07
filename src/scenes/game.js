@@ -166,7 +166,7 @@ export function initGameScene() {
             fixed()
         ]);
         add([
-            text("GAME OVER", { size: 64, font: "Rye", color: rgb(255, 0, 0) }),
+            text("GAME OVER", { size: 64, color: rgb(255, 0, 0) }),
             pos(center()),
             anchor("center")
         ]);
